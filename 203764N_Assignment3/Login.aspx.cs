@@ -61,6 +61,10 @@ namespace _203764N_Assignment3
         {
 
         }
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.AddHeader("X-Frame-Options", "DENY");
+        }
 
         protected void btn_submit_click(object sender, EventArgs e)
         {
@@ -537,4 +541,5 @@ namespace _203764N_Assignment3
 
 
     }
+
 }

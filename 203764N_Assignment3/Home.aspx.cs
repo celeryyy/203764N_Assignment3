@@ -39,6 +39,10 @@ namespace _203764N_Assignment3
                 Response.Redirect("Login.aspx", false);
             }
         }
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.AddHeader("X-Frame-Options", "DENY");
+        }
 
         //protected string getEmail()
         //{

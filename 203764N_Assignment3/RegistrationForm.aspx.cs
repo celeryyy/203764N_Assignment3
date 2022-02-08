@@ -22,6 +22,11 @@ namespace _203764N_Assignment3
 
         }
 
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.AddHeader("X-Frame-Options", "DENY");
+        }
+
         string MYDBConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MYDBConnection"].ConnectionString;
         static string finalHash;
         static string salt;
@@ -457,4 +462,5 @@ namespace _203764N_Assignment3
             return ciphertext;
         }
     }
+
 }
